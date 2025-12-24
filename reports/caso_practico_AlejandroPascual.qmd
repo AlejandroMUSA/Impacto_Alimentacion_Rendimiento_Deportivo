@@ -1,0 +1,281 @@
+---
+title: "Caso Práctico: Diseño de un Proyecto de Análisis de Datos Deportivos"
+subtitle: "Programación y Análisis de Datos Deportivos, Máster en Análisis de Datos Deportivos"
+author: "Tu Nombre"
+date: "La Fecha"
+format: docx
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+# Caso Práctico: Diseño de un Proyecto de Análisis de Datos Deportivos
+
+## Instrucciones
+
+El objetivo de esta actividad es que definas un **caso práctico original** relacionado con el análisis de datos deportivos, aplicando los conceptos aprendidos en la asignatura.
+**No se trata de programar ni analizar datos reales**, sino de explicar qué harías, cómo lo harías y qué herramientas usarías.
+
+Puedes (opcionalmente) integrar **LLMs** (Modelos de Lenguaje) en tu propuesta.
+Si lo haces, deberás redactar el **prompt** y justificar su utilidad.
+
+------------------------------------------------------------------------
+
+## Plantilla para definir tu caso práctico
+
+### **Título**
+
+Impacto de la alimentación en el rendimiento deportivo.
+
+------------------------------------------------------------------------
+
+### **Objetivo**
+
+El objetivo del análisis es analizar cómo la dieta y los hábitos alimenticios de los deportistas afectan su rendimiento en entrenamientos y partidos.
+La nutrición es un factor clave en el rendimiento de los deportistas.
+
+Conocer cómo una dieta puede mejorar o empeorar el desempeño físico es crucial para optimizar los entrenamientos y las estrategias de nutrición en los equipos.
+Los resultados ayudarían a entrenadores y nutricionistas a diseñar planes alimenticios personalizados para mejorar el rendimiento físico de los deportistas.
+
+------------------------------------------------------------------------
+
+### **Datos necesarios**
+
+-   Variables:
+
+    -   Datos nutricionales: Ingesta calórica, tipo de macronutrientes (proteínas, carbohidratos y grasas), micronutrientes (vitaminas y minerales), hidratación y horarios de ingesta.
+
+    -   Datos de rendimiento: Estadísticas de entrenamientos (duración, repeticiones e intensidad) y estadísticas de competición (puntuaciones y tiempos).
+
+    -   Datos demográficos: Edad, sexo, peso, altura y posición en el deporte.
+
+    -   Datos sobre descanso y recuperación: Horas y calidad de sueño, fatiga, lesiones y técnicas de recuperación.
+
+-   Fuentes de datos:
+
+    -   Encuestas a los deportistas: Obtener información sobre hábitos alimenticios.
+
+    -   APIs de dispositivos wearables: Obtener datos de entrenamiento y rendimiento.
+
+    -   Bases de datos de partidos y entrenamientos: Obtener estadísticas de entrenamientos y competiciones.
+
+    -   Estudios clínicos o artículos científicos: Referencias que ya hayan analizado este problema para orientación del análisis.
+
+-   Formato esperado: Archivos CSV, Excel o APIs que devuelvan JSON
+
+------------------------------------------------------------------------
+
+### **Transformaciones y limpieza**
+
+-   Problemas anticipados:
+
+    1.   Valores nulos, faltantes o duplicados.
+
+    2.  Valores atípicos.
+
+    3.   Datos inconsistentes de tiempo (la ingesta nutricional y los entrenamientos deben ser comparados en intervalos de tiempo similares).
+
+    4.  Dificultad al unir datos provenientes de distintas fuentes.
+
+    5.  Dificultad de encontrar individuos con todo que recojan todos los tipos de datos necesarios.
+
+    6.  Falta de variables importantes que se consideran significativas.
+
+    7.  Variables medidas en distintas unidades.
+
+-   Técnicas a usar:
+
+    1.  Eliminar valores faltantes y duplicados.
+        También se podrían eliminar los valores nulos o rellenarlos con técnicas de imputación.
+
+    2.  Interpretar dichos valores o eliminarlos.
+
+    3.  Resampleo temporal: Agrupar por intervalos regulares.
+
+    4.  Herramientas: Pandas (Python) o dplyr (R).
+
+    5.  Si se cuentan con recursos financieros; recolectar más datos.
+        En caso contrario; trabajar con una muestra reducida pero representativa.
+
+    6.  Feature Engineering: Crear nuevas variables que combinen datos de nutrición y rendimiento (por ejemplo, ratio de carbohidratos/proteínas y su impacto en el rendimiento).
+
+    7.  Normalización de variables.
+
+------------------------------------------------------------------------
+
+### **Análisis y herramientas**
+
+-   Métodos a aplicar:
+    -   Estadística descriptiva:
+
+        -   Variables numéricas:
+
+            -   Estadísticos de centralización: Media, mediana, moda.
+
+            -   Estadísticos de dispersión: Desviación estándar, rango, rango intercuartílico.
+
+            -   Estadísticos de forma: Asimetría, curtosis.
+
+        -   Variables categóricas:
+
+            -   Tablas de frecuencia: Absolutas y relativas.
+
+            -   Moda y distribución de categorías.
+
+    -   Correlaciones para identificar relaciones entre variables.
+
+    -   Modelos predictivos (regresión lineal o logística) para predecir el impacto de la dieta en el rendimiento.
+
+    -   Análisis de clusters para segmentar a los deportistas según su rendimiento y hábitos alimenticios.
+-   Estadísticas y pruebas: Test de hipótesis, análisis de varianza (ANOVA) para comparar los grupos según la ingesta nutricional y el rendimiento.
+-   Librerías a usar:
+    -    Python:
+
+        -   json para leer archivos JSON.
+
+        -   pandas para limpieza y manipulación de datos.
+
+        -   matplotlib, seaborn para visualización de distribuciones y correlaciones.
+
+        -   scikit-learn para análisis predictivo.
+
+    -   R:
+
+        -   jsonlite para leer archivos JSON.
+
+        -   tidyr, dplyr y stringr para limpieza y manipulación de datos.
+
+        -   ggplot2 y corrplot para visualización de distribuciones y correlaciones.
+
+        -   caret para análisis predictivo.
+
+        -   pROC para diagnóstico de modelo.
+-   Estadísticas y pruebas:
+    -   Contrastes de hipótesis paramétricos: T-student
+
+    -   Verificación de supuestos de regresión lineal: Linealidad, Homocedasticidad, Incorrelación, Normalidad, Multicolinealidad.
+
+    -   Análisis de varianza (ANOVA).
+
+    -   Diagnóstico de modelos: R^2^, Accuracy, Índice de Kappa, Sensibilidad, Especificidad, curva ROC.
+-   Uso de LLMs (Modelos de Lenguaje Grande):
+    -   Prompt sugerido:
+
+        ```         
+        Analiza la relación entre la dieta y los hábitos alimenticios de los deportistas y su impacto en el rendimiento físico durante entrenamientos y partidos. Resume los hallazgos en un lenguaje sencillo para entrenadores y sugiere recomendaciones prácticas para optimizar la nutrición y el rendimiento.
+        ```
+
+------------------------------------------------------------------------
+
+### **Visualización y comunicación**
+
+-   Gráficosútiles:
+
+    -   Histogramas y diagramas de dispersión para mostrar la distribución del rendimiento, así como de otras variables numéricas.
+
+    -   Diagrama de caja y bigotes (Boxplot) para visualizar rendimientos atípicos.
+
+    -   Gráficos de barras y de sectores para comparar la ingesta nutricional entre diferentes grupos de rendimiento.
+
+    -   Mapas de calor para visualizar correlaciones entre diferentes variables nutricionales y de rendimiento.
+
+    -   Gráficos de líneas para mostrar la evolución del rendimiento a lo largo del tiempo en función de la dieta.
+
+-   Presentación de resultados:
+
+    -   Informe reproducible en Quarto para documentar el análisis paso a paso, incluyendo código y resultados visuales.
+
+    -   Dashboard interactivo en Power BI para visualizar las relaciones entre variables de forma interactiva.
+
+    -   Informe en formato PDF con gráficos clave y conclusiones fáciles de entender para entrenadores y nutricionistas
+
+------------------------------------------------------------------------
+
+### **Gestión del proyecto**
+
+-   Organización del código y los datos:
+
+    -   Estructura de carpetas:
+
+        -   /data: Archivos CSV, JSON o Excel con los datos crudos.
+
+        -   /scripts: Código de análisis y limpieza de datos.
+
+        -   /visualizaciones: Archivos de gráficos generados.
+
+        -   /notebooks: Jupyter notebooks o Rmarkdown para análisis exploratorio.
+
+        -   /reports: informe Quarto y PDF.
+
+    -   Uso de un entorno de desarrollo virtual (como conda o venv) para mantener las dependencias organizadas.
+
+-   Uso de Git/GitHub:
+
+    -   Repositorio GitHub para versionar el código y los análisis.
+        Crear ramas para nuevas funcionalidades o análisis (.
+
+    -   Commits frecuentes con mensajes claros sobre lo que se ha cambiado o añadido.
+
+-   Manejo de errores y logs:
+
+    -   Uso de estructuras de control de errores como tryCatch (R) y try/except (Python) para la lectura y procesamiento de ficheros.
+
+    -   Pruebas unitarias en el código de análisis para asegurar que cada parte del flujo de trabajo esté funcionando correctamente.
+
+    -   Usa logging en Python o logger en R para registrar errores en la ejecución del código.
+
+------------------------------------------------------------------------
+
+## Criterios de evaluación
+
+### 1. Definición del problema (20%)
+
+-   Claridad y relevancia.
+-   Originalidad.
+
+### 2. Planificación del análisis (20%)
+
+-   Identificación de datos.
+-   Viabilidad.
+
+### 3. Transformación y preparación de datos (15%)
+
+-   Anticipación de problemas.
+-   Propuesta de soluciones.
+
+### 4. Diseño del flujo de trabajo y herramientas (15%)
+
+-   Selección de métodos.
+-   Uso de herramientas del curso.
+
+### 5. Integración opcional de LLM (10%)
+
+-   Calidad del prompt.
+-   Justificación.
+
+### 6. Visualización y comunicación (10%)
+
+-   Propuesta de gráficos.
+-   Formato de entrega.
+
+### 7. Gestión del proyecto (10%)
+
+-   Organización.
+-   Control de versiones.
+
+------------------------------------------------------------------------
+
+**Escala de calificación:**
+
+-   Excelente (90-100%): Caso original, bien estructurado, con integración opcional de LLM y propuesta clara de visualización y gestión.
+-   Notable (75-89%): Caso coherente y completo, aunque con menor detalle en alguna sección.
+-   Aprobado (60-74%): Caso básico, con lagunas en planificación o herramientas.
+-   Insuficiente (\<60%): Caso poco claro, sin conexión con los contenidos del curso.
+
+------------------------------------------------------------------------
+
+## Entregables
+
+-   Documento con la descripción del caso práctico.
+-   Informe reproducible (Quarto).
+-   Repositorio GitHub con estructura organizada.
