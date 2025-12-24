@@ -19,4 +19,4 @@ Los resultados ayudarán a entrenadores y nutricionistas a optimizar planes alim
 ## Cómo ejecutar
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/TU_USUARIO/impacto-alimentacion-rendimiento.git
+   git clone https://github.com/AlejandroMUSA/Impacto_Alimentacion_Rendimiento_Deportivo.git
